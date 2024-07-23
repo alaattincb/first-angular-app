@@ -1,8 +1,8 @@
-import {Movie} from './movie';
+import {navbar} from './navbar';
 
-export const Movies: Movie [] = [
-    {id: 1, name:"movie 1"},
-    {id: 2, name:"movie 2"},
-    {id: 3, name:"movie 3"},
+export const body: navbar [] = [
+    {id: 1, name:"navbar 1"},
+    {id: 2, name:"navbar 2"},
+    {id: 3, name:"navbar 3"},
 
 ]

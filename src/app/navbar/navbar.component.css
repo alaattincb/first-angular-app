@@ -1,0 +1,17 @@
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+}
+.navbar-nav .dropdown-menu {
+    margin-top: 0;
+}
+.dropdown-menu {
+        width: 600px;
+    }
+    .mega-dropdown {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .mega-dropdown .column {
+        flex: 1;
+        padding: 15px;
+    }
