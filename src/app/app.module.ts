@@ -4,22 +4,27 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { bodyComponent } from './body/body.component';
-import { navbarComponent } from './navbar/navbar.component';
+import {BodyComponent} from './body/body.component'
+import { NavbarComponent } from './navbar/navbar.component';
 import { CardsComponent } from "./cards/cards.component"; 
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
-    bodyComponent,
-    navbarComponent  
+    BodyComponent,
+    NavbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
     RouterModule.forRoot([]),
-    CardsComponent
+    CardsComponent,
+    NgbModule,
+    
 ],
   providers: [],
   bootstrap: [AppComponent]

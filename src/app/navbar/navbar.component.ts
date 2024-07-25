@@ -5,6 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class navbarComponent {
-  // Bileşeninize ait diğer özellikler ve yöntemler
+export class NavbarComponent {
+  isDarkTheme = false;
+
+  toggleTheme(event: Event): void {
+    const checkbox = event.target as HTMLInputElement;
+    this.isDarkTheme = checkbox.checked;
+  }
 }

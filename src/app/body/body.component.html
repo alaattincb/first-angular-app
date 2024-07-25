@@ -1,5 +1,4 @@
 
-
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-12 text-center">
@@ -11,19 +10,19 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
       <div class="col-md-3 card-container">
-          <img src="mobile-app-showcase-v1.jpg" alt="Image 1">
+          <img src="assets/img/mobile-app-showcase-v1.jpg" alt="Image 1">
           <div class="card-text">
               <h2>Mobile App Showcase v.1</h2>
           </div>
       </div>
       <div class="col-md-3 card-container">
-          <img src="mobile-app-showcase-v2.jpg" alt="Image 2">
+          <img src="assets/img/mobile-app-showcase-v2.jpg" alt="Image 2">
           <div class="card-text">
               <h2>Mobile App Showcase v.2</h2>
           </div>
       </div>
       <div class="col-md-3 card-container">
-          <img src="mobile-app-showcase-v3.jpg" alt="Image 3">
+          <img src="assets/img/mobile-app-showcase-v3.jpg" alt="Image 3">
           <div class="card-text">
               <h2>Mobile App Showcase v.3</h2>
           </div>
@@ -33,19 +32,19 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
       <div class="col-md-3 card-container">
-          <img src="product-landing.jpg" alt="Image 1">
+          <img src="assets/img/product-landing.jpg" alt="Image 1">
           <div class="card-text">
               <h2>Product Landing</h2>
           </div>
       </div>
       <div class="col-md-3 card-container">
-          <img src="saas-v1.jpg" alt="Image 2">
+          <img src="assets/img/saas-v1.jpg" alt="Image 2">
           <div class="card-text">
               <h2>SaaS v.1</h2>
           </div>
       </div>
       <div class="col-md-3 card-container">
-          <img src="saas-v2.jpg" alt="Image 3">
+          <img src="assets/img/saas-v2.jpg" alt="Image 3">
           <div class="card-text">
               <h2>SaaS v.2</h2>
           </div>
@@ -118,6 +117,22 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-12 text-center">
+      <button type="button" class="btn btn-success" (click)="open(content)">
+        Open modal
+      </button>
+      
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Merhaba Emir Abi</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          Modal body..
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Close</button>
+        </div>
+      </ng-template>
       <h1>Subscribe to Our Newsletter</h1>
     </div>
   </div>
@@ -150,7 +165,7 @@
   </div>
 </div>
 <footer class="footer text-center">
-  <p class="text-secondary">© All rights reserved. Made with <span class="heart">❤️</span> by <a href="#">Createx Studio</a></p>
+  <p class="text-secondary">© All rights reserved. Made with <span class="heart">❤️</span> by <a href="#">Alaattin Çobanoğlu</a></p>
 </footer>
   <script>
     $(document).ready(function() {
