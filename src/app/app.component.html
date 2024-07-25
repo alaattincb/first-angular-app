@@ -1,14 +1,14 @@
-<navbar></navbar>
+<navbar *ngIf="showLayout"></navbar>
 
-<div class="d-flex">
-  <sidebar></sidebar>
+<div class="d-flex" >
+  <sidebar *ngIf="showLayout"></sidebar>
   <div class="content flex-grow-1" [class.shifted]="(sidebarService.isVisible$ | async)">
    
     <div style="margin-top: 100px;">
       <router-outlet></router-outlet>
 
-      <hr>
-      <app-footer-content></app-footer-content>
+      <hr *ngIf="showLayout">
+      <app-footer-content *ngIf="showLayout"></app-footer-content>
         </div>
   </div>
 </div>
