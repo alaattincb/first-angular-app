@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,7 +20,8 @@ export const routes: Routes = [
   { path: 'news', component: NewsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'admin-page', component: AdminPageComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
