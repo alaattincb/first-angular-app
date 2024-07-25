@@ -1,0 +1,17 @@
+<table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Action</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let audit_logs of auditLogs">
+        <td>{{ audit_logs._id }}</td>
+        <td>{{ audit_logs.location }}</td>
+        <td>{{ audit_logs.log | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

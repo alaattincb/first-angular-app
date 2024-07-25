@@ -1,0 +1,16 @@
+<h1 class="text-center text-primary">Home</h1>
+
+
+  <div class="content flex-grow-1" [class.shifted]="(sidebarService.isVisible$ | async)">
+    <div style="padding-top: 60px;">
+      <app-carousel></app-carousel>
+    </div>
+    <div style="margin-top: 60px;">
+      <cards></cards>
+      <landing></landing>
+      <more></more>
+      <roles></roles>
+
+    </div>
+  </div>
+

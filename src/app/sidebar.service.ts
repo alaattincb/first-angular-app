@@ -1,3 +1,4 @@
+// src/app/sidebar.service.ts
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -5,10 +6,10 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SidebarService {
-  private sidebarState = new BehaviorSubject<boolean>(false);
-  sidebarState$ = this.sidebarState.asObservable();
+  private isVisibleSubject = new BehaviorSubject<boolean>(false);
+  isVisible$ = this.isVisibleSubject.asObservable();
 
-  toggleSidebar() {
-    this.sidebarState.next(!this.sidebarState.value);
+  toggleSidebar(): void {
+    this.isVisibleSubject.next(!this.isVisibleSubject.value);
   }
 }

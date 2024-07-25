@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 10%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100vh;
+    overflow: auto;  transition: transform 0.3s ease, width 0.3s ease;
+    transform: translateX(-10%);
+    top: 9%;
+  }
+  .sidebar.show {
+    transform: translateX(0);
+  }
+  .sidebar.dark-theme {
+    background-color: #343a40; 
+    color: ffffff; 
+  }
+  .sidebar.dark-theme a {
+    color: white; 
+  }
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  .content {
+    
+    transition: margin-left 0.5s ease;
+  }
+  
+  .content.shifted {
+    margin-left: 15%; 
+  }
+  .sidebar a.active {
+    background-color: #043eaa;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }

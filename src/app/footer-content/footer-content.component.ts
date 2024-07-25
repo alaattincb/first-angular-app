@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'body',
-  templateUrl: './body.component.html',
-  styleUrls: ['./body.component.css']
+  selector: 'app-footer-content',
+  standalone: true,
+  imports: [],
+  templateUrl: './footer-content.component.html',
+  styleUrl: './footer-content.component.css'
 })
-export class BodyComponent {
+export class FooterContentComponent {
   constructor(private modalService: NgbModal) {}
 
   open(content: any) {

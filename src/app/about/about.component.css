@@ -1,0 +1,12 @@
+.about-us {
+    padding: 50px 0;
+}
+
+.about-us .image {
+    max-width: 90%;
+    height: auto;
+}
+
+.about-us .content {
+    padding-left: 20px;
+}
