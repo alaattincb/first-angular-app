@@ -4,6 +4,7 @@ import { SidebarService } from './sidebar.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -20,14 +21,15 @@ export class AppComponent implements OnInit {
   constructor(
     public sidebarService: SidebarService,
     private router: Router,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      this.showLayout = !this.router.url.includes('/login'); 
+      this.showLayout = !this.router.url.includes('/login') && !this.router.url.includes('/admin-page');
     });
   }
 
@@ -37,5 +39,9 @@ export class AppComponent implements OnInit {
 
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
+  }
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }
