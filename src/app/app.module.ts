@@ -12,10 +12,15 @@ import { CarouselComponent } from "./carousel/carousel.component";
 import { LandingComponent } from './landing/landing.component';
 import { MoreComponent } from './more/more.component';
 import { FooterContentComponent } from "./footer-content/footer-content.component";
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RolesComponent } from './roles/roles.component';
 import { AppRoutingModule } from './app.routes';
 import { NewsComponent } from './news/news.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { AuthInterceptor } from './auth.interceptor';
+ 
 
 @NgModule({
   declarations: [
@@ -36,9 +41,13 @@ import { NewsComponent } from './news/news.component';
     MoreComponent,
     FooterContentComponent,
     RolesComponent,
-    AppRoutingModule
+    AppRoutingModule,
+    NgApexchartsModule,
+    BrowserModule,
 ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

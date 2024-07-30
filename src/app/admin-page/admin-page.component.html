@@ -1,152 +1,617 @@
-<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-    <ul class="navbar-nav px-3">
-      <li class="nav-item text-nowrap">
-        <button class="nav-link" (click)="logout()">Sign out</button>
-      </li>
-    </ul>
-  </nav>
+<div style="background-color: rgba(237, 240, 244, 0.774);">
+  <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+  <div class="container">
+    <img src="assets/img/logo.png" class="navbar-brand">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar1">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar1">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item ">
+          <a class="nav-link text-primary disabled" href="#">DASHBOARD</a>
 
-  <div class="container-fluid">
-    <div class="row">
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-        <div class="sidebar-sticky">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">
-                <span data-feather="home"></span>
-                Dashboard <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file"></span>
-                Orders
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="shopping-cart"></span>
-                Products
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="users"></span>
-                Customers
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="bar-chart-2"></span>
-                Reports
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
-                Integrations
-              </a>
-            </li>
-          </ul>
+        </li>
 
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Saved reports</span>
-            <a class="d-flex align-items-center text-muted" href="#">
-              <span data-feather="plus-circle"></span>
-            </a>
-          </h6>
-          <ul class="nav flex-column mb-2">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Current month
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Last quarter
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Social engagement
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Year-end sale
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      </ul>
+      <div class="d-flex align-items-center">
+        <span>username</span>
+        <button class="btn btn-danger" (click)="logout()">Sign Out</button>
+      </div>
+    </div>
+  </div><hr>
+</nav>
 
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-          <h1 class="h2">Dashboard</h1>
-          <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="btn-group mr-2">
-              <button class="btn btn-sm btn-outline-secondary">Share</button>
-              <button class="btn btn-sm btn-outline-secondary">Export</button>
+<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" style="top: 56px;"><div class="container">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar2">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar2">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="megaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Interface
+          </a>
+          <div class="dropdown-menu" aria-labelledby="megaDropdown">
+            <div class="mega-dropdown">
+              <div class="column">
+                <a class="dropdown-item" href="#">About v.1</a>
+                <a class="dropdown-item" href="#">About v.2</a>
+                <a class="dropdown-item" href="#">About v.3</a>
+              </div>
             </div>
-            <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-              <span data-feather="calendar"></span>
-              This week
-            </button>
           </div>
-        </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Form Elements</a>
+        </li>
 
-        <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="megaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Extra
+          </a>
+          <div class="dropdown-menu" aria-labelledby="megaDropdown">
+            <div class="mega-dropdown">
+              <div class="column">
+                <a class="dropdown-item" href="#">About v.1</a>
+                <a class="dropdown-item" href="#">About v.2</a>
+                <a class="dropdown-item" href="#">About v.3</a>
+              </div>
+            </div>
+          </div>
+        </li>
 
-        <h2>Section title</h2>
-       
-      </main>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="megaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Layout
+          </a>
+          <div class="dropdown-menu" aria-labelledby="megaDropdown">
+            <div class="mega-dropdown">
+              <div class="column">
+                <a class="dropdown-item" href="#">About v.1</a>
+                <a class="dropdown-item" href="#">About v.2</a>
+                <a class="dropdown-item" href="#">About v.3</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Icons</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Emails</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Illustrations</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="megaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Help
+          </a>
+          <div class="dropdown-menu" aria-labelledby="megaDropdown">
+            <div class="mega-dropdown">
+              <div class="column">
+                <a class="dropdown-item" href="#">About v.1</a>
+                <a class="dropdown-item" href="#">About v.2</a>
+                <a class="dropdown-item" href="#">About v.3</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>       <form class="d-flex align-items-center">
+        <input type="text" class="form-control" placeholder="Search">
+
+
+    </form>
     </div>
   </div>
+</nav>
+<div class="container">
+  <div class="row pt-3">
+    <div class="col-6">
+      <h6 class="text-secondary">Overview</h6>
+      <h6 class="text-start">Dashboard</h6>
+    </div>
+    <div class="col-6 d-flex justify-content-end align-items-center">
+      <button class="btn btn-light me-2">New View</button>
+      <button class="btn btn-primary">Create New Report</button>
+    </div>
+  </div>
+</div>
+<div class="container pt-3"> <div class="row">
+  <app-emir></app-emir>
+ <!-- <div class="col-md-4"></div><div class="col-md-4">
+    <p>User Add:</p>
+<button data-bs-toggle="collapse" data-bs-target="#demo" class="btn btn-success">Add</button>
 
-  
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-  <script src="../../assets/js/vendor/popper.min.js"></script>
-  <script src="../../dist/js/bootstrap.min.js"></script>
+<div id="demo" class="collapse">
+<form id="addForm">
+  <div>
+    <label for="register-email" class="form-label">Email:</label> <div *ngIf="addForm.get('email')?.errors?.['required']">Email is required</div>
+    <input id="register-email" formControlName="email" autocomplete="email" class="form-control"> <div *ngIf="addForm.get('email')?.errors?.['email']">Invalid email</div>
+  </div>
+  <div>
+    <label for="register-password" class="form-label">Password:</label>
+    <input id="register-password" type="password" formControlName="password" autocomplete="new-password" class="form-control">
+  </div>
+  <div>
+    <label for="first-name" class="form-label">First Name:</label>
+    <input id="first-name" formControlName="first_name" class="form-control">
+  </div>
+  <div>
+    <label for="last-name" class="form-label">Surname:</label>
+    <input id="last-name" formControlName="last_name" class="form-control">
+  </div>
+  <div>
+    <label for="phone-number" class="form-label">Phone Number:</label>
+    <input id="phone-number" formControlName="phone_number" class="form-control">
+  </div>
+  <label for="roles" class="form-label">Roles:</label>
+  <select id="roles" name="roles" multiple class="form-control">
+    <option *ngFor="let role of roles" [value]="role._id">{{ role.role_name}}</option>
+  </select>
+  <button type="button"  class="btn btn-primary mt-3" (click)="onSubmit()">Register</button>
+</form>
+ </div></div></div></div><div class="col-md-4"></div>  -->
+<div class="container">
+  <div class="row pt-3">
+    <div class="col-3">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">Sales</p>
 
-  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-  <script>
-    feather.replace()
-  </script>
+          <h4 class="card-title">75%</h4>
+          <div class="progress">
+            <div class="progress-bar" style="width:75%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">Revenue</p>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.1/dist/Chart.min.js"></script>
-  <script>
-    var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        datasets: [{
-          data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-          lineTension: 0,
-          backgroundColor: 'transparent',
-          borderColor: '#007bff',
-          borderWidth: 4,
-          pointBackgroundColor: '#007bff'
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: false
-            }
-          }]
-        },
-        legend: {
-          display: false,
-        }
-      }
-    });
-  </script>
+          <h4 class="card-title">$4300</h4>
+          <div class="progress">
+            <div class="progress-bar" style="width:50%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">New Clients</p>
+
+          <h4 class="card-title">6782</h4>
+          <div class="progress">
+            <div class="progress-bar" style="width:30%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">Active Users</p>
+
+          <h4 class="card-title">2986</h4>
+          <div class="progress">
+            <div class="progress-bar" style="width:10%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Sales</h6>
+                    <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>. 132</span></h2>
+                    <p class="m-b-0">Waiting Payments<span class="f-right">12</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-green order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Orders</h6>
+                    <h2 class="text-right"><i class="fa fa-rocket f-left"></i><span>. 78</span></h2>
+                    <p class="m-b-0">Shipped<span class="f-right">32</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-yellow order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Shares</h6>
+                    <h2 class="text-right"><i class="fa fa-twitter f-left"></i><span>. 623</span></h2>
+                    <p class="m-b-0">Today<span class="f-right">16</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-pink order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Likes</h6>
+                    <h2 class="text-right"><i class="fa fa-facebook f-left"></i><span>. 132</span></h2>
+                    <p class="m-b-0">Today<span class="f-right">21</span></p>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+<div class="container"><div class="row">
+  <div class="col-md-6">
+    <div id="chart">
+      <apx-chart
+    [series]="chartOptions.series!"
+    [chart]="chartOptions.chart!"
+    [xaxis]="chartOptions.xaxis!"
+    [dataLabels]="chartOptions.dataLabels!"
+    [plotOptions]="chartOptions.plotOptions!"
+    [legend]="chartOptions.legend!"
+    [fill]="chartOptions.fill!"
+    [yaxis]="chartOptions.yaxis!"
+  ></apx-chart>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.628431521686!2d28.723378575857534!3d40.98961647135317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa181badd1b0f%3A0xa69c75bd9f4fd8a3!2zxLBzdGFuYnVsIMOcbml2ZXJzaXRlc2kgQXZjxLFsYXIgS2FtcMO8c8O8!5e0!3m2!1str!2str!4v1721998090080!5m2!1str!2str" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div></div><div class="container">
+<div class="mt-4 p-5 bg-light text-dark rounded">
+  <h4>Tabler Icons</h4>
+  <p>All icons come from the Tabler Icons set and are MIT-licensed. Visit tabler-icons.io, download any of the 5361 icons in SVG, PNG or React and use them in your favourite design tools..</p>
+  <button type="button" class="btn btn-primary d-flex align-items-center">
+    <i class="fas fa-download me-2"></i> Download Icons
+  </button>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+  </div></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+  <table class="table mt-5 text-secondary table-responsive">
+    <thead >
+      <tr>
+        <th colspan="4">Most Visited Page</th>
+
+      </tr>
+      <tr>
+        <th>Page Name</th>
+        <th>Visitors</th>
+        <th>Unique</th>
+        <th>Bounce Rate</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>/</td>
+        <td>4,896</td>
+        <td>3,654</td>
+        <td>82.54%</td>
+
+      </tr>
+      <tr>
+        <td>/form-elements.html</td>
+        <td>3,652</td>
+        <td>3,215</td>
+        <td>76.29%</td>
+
+      </tr>
+      <tr>
+        <td>/index.html</td>
+        <td>3,256</td>
+        <td>2,865</td>
+        <td>72.65%</td>
+
+      </tr>
+      <tr>
+        <td>/icons.html</td>
+        <td>986</td>
+        <td>865</td>
+        <td>44.65%</td>
+
+      </tr>
+      <tr>
+        <td>/docs/</td>
+        <td>912</td>
+        <td>822</td>
+        <td>41.65%</td>
+
+      </tr>
+      <tr>
+        <td>/accordion.html</td>
+        <td>855</td>
+        <td>798</td>
+        <td>32.65%</td>
+
+      </tr>
+    </tbody>
+  </table>
+      </div>
+      <div class="col-md-5">
+        <img src="assets/img/reklam.png" class="img-fluid" style="width: 100%;">
+
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+  <table class="table mt-5 text-secondary table-responsive">
+    <thead >
+      <tr>
+        <th colspan="12">Social Media Traffic</th>
+
+      </tr>
+      <tr>
+        <th>Network</th>
+        <th>Visitors</th>
+        <th></th>
+        <th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Instagram</td>
+        <td>3550</td>
+        <td colspan="12"><div class="progress">
+          <div class="progress-bar" style="width:70%"></div>
+        </div></td>
+
+      </tr>
+      <tr>
+        <td>X</td>
+        <td>1798</td>
+        <td colspan="12"><div class="progress">
+          <div class="progress-bar" style="width:40%"></div>
+        </div></td>
+
+      </tr>
+      <tr>
+        <td>Facebook</td>
+        <td>1245</td>
+        <td colspan="12"><div class="progress">
+          <div class="progress-bar" style="width:35%"></div>
+        </div></td>
+
+      </tr>
+      <tr>
+        <td>TikTok</td>
+        <td>986</td>
+        <td colspan="12"><div class="progress">
+          <div class="progress-bar" style="width:30%"></div>
+        </div></td>
+
+      </tr>
+      <tr>
+        <td>Pinterest</td>
+        <td>854</td>
+        <td colspan="12"><div class="progress">
+          <div class="progress-bar" style="width:20%"></div>
+        </div></td>
+
+      </tr>
+      <tr>
+        <td>VK</td>
+        <td>650</td>
+        <td colspan="12"><div class="progress">
+          <div class="progress-bar" style="width:5%"></div>
+        </div></td>
+
+      </tr>
+    </tbody>
+  </table>
+      </div>
+      <div class="col-md-7">
+        <div class="card mt-5">
+          <div class="card-header">
+            <h3 class="card-title">Tasks</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table card-table table-vcenter">
+              <tbody><tr>
+                <td class="w-1 pe-0">
+                  <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task" checked="">
+                </td>
+                <td class="w-100">
+                  <a href="#" class="text-reset">Extend the data model.</a>
+                </td>
+                <td class="text-nowrap text-secondary">
+                  <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path><path d="M16 3v4"></path><path d="M8 3v4"></path><path d="M4 11h16"></path><path d="M11 15h1"></path><path d="M12 15v3"></path></svg>
+                  August 05, 2021
+                </td>
+                <td class="text-nowrap">
+                  <a href="#" class="text-secondary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l5 5l10 -10"></path></svg>
+                    2/7
+                  </a>
+                </td>
+                <td class="text-nowrap">
+                  <a href="#" class="text-secondary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 9h8"></path><path d="M8 13h6"></path><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z"></path></svg>
+                    3</a>
+                </td>
+                <td>
+                  <span class="avatar avatar-sm"></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="w-1 pe-0">
+                  <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task">
+                </td>
+                <td class="w-100">
+                  <a href="#" class="text-reset">Verify the event flow.</a>
+                </td>
+                <td class="text-nowrap text-secondary">
+                  <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path><path d="M16 3v4"></path><path d="M8 3v4"></path><path d="M4 11h16"></path><path d="M11 15h1"></path><path d="M12 15v3"></path></svg>
+                  January 01, 2019
+                </td>
+                <td class="text-nowrap">
+                  <a href="#" class="text-secondary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l5 5l10 -10"></path></svg>
+                    3/10
+                  </a>
+                </td>
+                <td class="text-nowrap">
+                  <a href="#" class="text-secondary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 9h8"></path><path d="M8 13h6"></path><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z"></path></svg>
+                    6</a>
+                </td>
+                <td>
+                  <span class="avatar avatar-sm">JL</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="w-1 pe-0">
+                  <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task">
+                </td>
+                <td class="w-100">
+                  <a href="#" class="text-reset">Database backup and maintenance</a>
+                </td>
+                <td class="text-nowrap text-secondary">
+                  <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path><path d="M16 3v4"></path><path d="M8 3v4"></path><path d="M4 11h16"></path><path d="M11 15h1"></path><path d="M12 15v3"></path></svg>
+                  December 28, 2018
+                </td>
+                <td class="text-nowrap">
+                  <a href="#" class="text-secondary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l5 5l10 -10"></path></svg>
+                    0/6
+                  </a>
+                </td>
+                <td class="text-nowrap">
+                  <a href="#" class="text-secondary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 9h8"></path><path d="M8 13h6"></path><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z"></path></svg>
+                    1</a>
+                </td>
+                <td>
+                  <span class="avatar avatar-sm" ></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="w-1 pe-0">
+                  <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task" checked="">
+                </td>
+                <td class="w-100">
+                  <a href="#" class="text-reset">Identify the implementation team.</a>
+                </td>
+                <td class="text-nowrap text-secondary">
+                  <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path><path d="M16 3v4"></path><path d="M8 3v4"></path><path d="M4 11h16"></path><path d="M11 15h1"></path><path d="M12 15v3"></path></svg>
+                  November 11, 2020
+                </td>
+                <td class="text-nowrap">
+                  <a href="#" class="text-secondary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l5 5l10 -10"></path></svg>
+                    6/10
+                  </a>
+                </td>
+                <td class="text-nowrap">
+                  <a href="#" class="text-secondary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 9h8"></path><path d="M8 13h6"></path><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z"></path></svg>
+                    12</a>
+                </td>
+                <td>
+                  <span class="avatar avatar-sm" ></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="w-1 pe-0">
+                  <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task">
+                </td>
+                <td class="w-100">
+                  <a href="#" class="text-reset">Define users and workflow</a>
+                </td>
+                <td class="text-nowrap text-secondary">
+                  <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path><path d="M16 3v4"></path><path d="M8 3v4"></path><path d="M4 11h16"></path><path d="M11 15h1"></path><path d="M12 15v3"></path></svg>
+                  November 14, 2021
+                </td>
+                <td class="text-nowrap">
+                  <a href="#" class="text-secondary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l5 5l10 -10"></path></svg>
+                    3/7
+                  </a>
+                </td>
+                <td class="text-nowrap">
+                  <a href="#" class="text-secondary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 9h8"></path><path d="M8 13h6"></path><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z"></path></svg>
+                    5</a>
+                </td>
+                <td>
+                  <span class="avatar avatar-sm"></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="w-1 pe-0">
+                  <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task" checked="">
+                </td>
+                <td class="w-100">
+                  <a href="#" class="text-reset">Check Pull Requests</a>
+                </td>
+                <td class="text-nowrap text-secondary">
+                  <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path><path d="M16 3v4"></path><path d="M8 3v4"></path><path d="M4 11h16"></path><path d="M11 15h1"></path><path d="M12 15v3"></path></svg>
+                  February 11, 2021
+                </td>
+                <td class="text-nowrap">
+                  <a href="#" class="text-secondary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l5 5l10 -10"></path></svg>
+                    2/9
+                  </a>
+                </td>
+                <td class="text-nowrap">
+                  <a href="#" class="text-secondary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 9h8"></path><path d="M8 13h6"></path><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z"></path></svg>
+                    3</a>
+                </td>
+                <td>
+                  <span class="avatar avatar-sm" ></span>
+                </td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<footer class="bg-light"><hr>
+  <div class="container">
+    <div class="row">
+<div class="col-md-6">
+      <p class="text-start text-secondary pt-3">Copyright © 2024 Alaattin Çobanoğlu. All rights reserved.    v1.0.0-beta20</p></div><div class="col-md-6">
+      <p class="text-end text-secondary pt-3"><a href="">Documentation </a> <a href="">License</a><a href=""> Source </a><a href="">code </a><a href=""> Sponsor</a></p></div>
+    </div>
+  </div>
+</footer></div>

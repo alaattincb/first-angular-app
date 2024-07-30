@@ -33,7 +33,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", "node_modules/apexcharts/dist/apexcharts.min.js"
             ]   
           },
           "configurations": {
@@ -95,7 +95,7 @@
               "src/styles.css"
             ],
             "scripts": [
-  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", "node_modules/apexcharts/dist/apexcharts.min.js"
 ]
           }
         }
