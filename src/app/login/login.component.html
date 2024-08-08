@@ -14,6 +14,10 @@
             <input type="password" id="password" class="form-control" formControlName="password" />
 
           </div>
+          <div>
+            <input type="checkbox" id="rememberMe" formControlName="rememberMe">
+            <label for="rememberMe">Remember Me</label>
+          </div>
           <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
         </form>
       </div>

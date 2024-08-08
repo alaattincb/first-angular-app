@@ -10,6 +10,8 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AuthGuard } from './auth.guard';
+import { ReqresComponent } from './reqres/reqres.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,6 +24,9 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent},
   { path: 'admin-page', component: AdminPageComponent, canActivate: [AuthGuard] },
+  { path: 'reqres', component: ReqresComponent},
+  { path: 'file-upload', component: FileUploadComponent}
+
 ];
 
 @NgModule({

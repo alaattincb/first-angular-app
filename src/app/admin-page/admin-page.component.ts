@@ -1,52 +1,32 @@
-import { Component, OnInit, ViewChild, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { RoleService } from '../role.service';
-import {
-  ChartComponent,
-  ApexAxisChartSeries,
-  ApexChart,
-  ApexXAxis,
-  ApexDataLabels,
-  ApexPlotOptions,
-  ApexLegend,
-  ApexFill,
-  ApexYAxis,
-  NgApexchartsModule,
-  ApexNonAxisChartSeries
-} from 'ng-apexcharts';
-import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // Import reactive forms
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ItemService } from '../item.service';
-import { AuthInterceptor } from '../auth.interceptor';
 import { UserRoleService } from '../user-role.service';
-import { EmirComponent } from "../emir/emir.component";
-
-export type ChartOptions = {
-  series: ApexAxisChartSeries | ApexNonAxisChartSeries;
-  chart: ApexChart;
-  xaxis: ApexXAxis;
-  dataLabels: ApexDataLabels;
-  plotOptions: ApexPlotOptions;
-  legend: ApexLegend;
-  fill: ApexFill;
-  yaxis: ApexYAxis;
-};
+import { ReqresService } from '../reqres.service';
+import { CommonModule } from '@angular/common';
+import { EmirComponent } from '../emir/emir.component';
+import { singleUserResponse } from '../../models/singleUser.model';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ApxChartComponent } from '../apxchart/apxchart.component';
 
 @Component({
   selector: 'app-admin-page',
   standalone: true,
-  imports: [CommonModule, NgApexchartsModule, EmirComponent], 
+  imports: [CommonModule, EmirComponent, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule, ApxChartComponent],
   templateUrl: './admin-page.component.html',
-  styleUrls: ['./admin-page.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  styleUrls: ['./admin-page.component.css']
 })
 export class AdminPageComponent implements OnInit {
-  @ViewChild('chart') chart: ChartComponent | undefined;
-  public chartOptions: Partial<ChartOptions>;
   roles: any[] = [];
-  addForm: FormGroup; 
+  addForm: FormGroup;
+  currentUser: any;
 
   constructor(
     private authService: AuthService,
@@ -55,55 +35,9 @@ export class AdminPageComponent implements OnInit {
     private fb: FormBuilder,
     private http: HttpClient,
     private itemService: ItemService,
-    private userroleService: UserRoleService
-
+    private userroleService: UserRoleService,
+    private reqresService: ReqresService
   ) {
-    this.chartOptions = {
-      series: [
-        {
-          name: 'Series A',
-          data: [44, 55, 41, 67, 22, 43]
-        },
-        {
-          name: 'Series B',
-          data: [13, 23, 20, 8, 13, 27]
-        },
-        {
-          name: 'Series C',
-          data: [11, 17, 15, 15, 21, 14]
-        },
-        {
-          name: 'Series D',
-          data: [21, 7, 25, 13, 22, 8]
-        }
-      ],
-      chart: {
-        type: 'bar',
-        height: 350,
-        stacked: true
-      },
-      plotOptions: {
-        bar: {
-          horizontal: false,
-          borderRadius: 10
-        }
-      },
-      xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
-      },
-      legend: {
-        position: 'top'
-      },
-      fill: {
-        opacity: 1
-      },
-      yaxis: {
-        title: {
-          text: 'Values'
-        }
-      }
-    };
-
     this.addForm = this.fb.group({
       email: [''],
       password: [''],
@@ -114,14 +48,27 @@ export class AdminPageComponent implements OnInit {
     });
   }
 
-  token: string | null = '';
   async ngOnInit(): Promise<void> {
     try {
       this.roles = await this.userroleService.getRoles();
     } catch (error) {
       console.error('Error fetching roles', error);
     }
-    this.token = this.authService.getToken();
+    this.loadUserData();
+  }
+
+  loadUserData(): void {
+    const userId = this.authService.getUserId();
+    if (userId) {
+      this.authService.getUserById(userId).subscribe({
+        next: (user) => {
+          this.currentUser = user;
+        },
+        error: (error) => {
+          console.error('Error fetching user data', error);
+        }
+      });
+    }
   }
 
   loadRoles(): void {
@@ -135,14 +82,15 @@ export class AdminPageComponent implements OnInit {
       }
     });
   }
+
   onSubmit(): void {
     if (this.addForm.invalid) {
       console.error('Form is invalid', this.addForm.errors);
       return;
     }
-  
+
     console.log('Form Data:', this.addForm.value);
-  
+
     this.http.post('http://localhost:3000/api/users/add', this.addForm.value).subscribe({
       next: (response) => {
         console.log('User added successfully', response);
@@ -156,7 +104,6 @@ export class AdminPageComponent implements OnInit {
       }
     });
   }
-  
 
   logout(): void {
     this.authService.logout();

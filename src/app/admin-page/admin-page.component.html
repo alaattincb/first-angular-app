@@ -1,27 +1,41 @@
 <div style="background-color: rgba(237, 240, 244, 0.774);">
   <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
-  <div class="container">
-    <img src="assets/img/logo.png" class="navbar-brand">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar1">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mynavbar1">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item ">
-          <a class="nav-link text-primary disabled" href="#">DASHBOARD</a>
+    <div class="container">
+      <img src="assets/img/logo.png" class="navbar-brand">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar1">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar1">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link text-primary disabled" href="#">DASHBOARD</a>
+            <p class=" text-secondary" style="font-size: 12px;">{{ currentUser.email }}</p>
 
-        </li>
+          </li>
+        </ul>
 
-      </ul>
-      <div class="d-flex align-items-center">
-        <span>username</span>
-        <button class="btn btn-danger" (click)="logout()">Sign Out</button>
+        <div class="d-flex align-items-center">  
+            <p class=" text-dark" style="font-size: 12px;">{{ currentUser.first_name }} {{ currentUser.last_name }}</p><br>
+          
+          <button class="Btn" (click)="logout()">
+            <div class="sign">
+              <svg viewBox="0 0 512 512">
+                <path
+                  d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"
+                ></path>
+              </svg>
+            </div>
+          
+            <div class="text">Logout</div>
+          </button>
+
+        </div>
       </div>
     </div>
-  </div><hr>
-</nav>
+  </nav>
+  
 
-<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" style="top: 56px;"><div class="container">
+<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" style="top: 72px;"><div class="container">
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar2">
       <span class="navbar-toggler-icon"></span>
@@ -156,7 +170,9 @@
   <button type="button"  class="btn btn-primary mt-3" (click)="onSubmit()">Register</button>
 </form>
  </div></div></div></div><div class="col-md-4"></div>  -->
-<div class="container">
+
+
+ <div class="container">
   <div class="row pt-3">
     <div class="col-3">
       <div class="card">
@@ -252,23 +268,14 @@
         </div>
 	</div>
 </div>
+
+
 <div class="container"><div class="row">
   <div class="col-md-6">
-    <div id="chart">
-      <apx-chart
-    [series]="chartOptions.series!"
-    [chart]="chartOptions.chart!"
-    [xaxis]="chartOptions.xaxis!"
-    [dataLabels]="chartOptions.dataLabels!"
-    [plotOptions]="chartOptions.plotOptions!"
-    [legend]="chartOptions.legend!"
-    [fill]="chartOptions.fill!"
-    [yaxis]="chartOptions.yaxis!"
-  ></apx-chart>
-    </div>
+<app-apxchart></app-apxchart>
   </div>
   <div class="col-md-6">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.628431521686!2d28.723378575857534!3d40.98961647135317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa181badd1b0f%3A0xa69c75bd9f4fd8a3!2zxLBzdGFuYnVsIMOcbml2ZXJzaXRlc2kgQXZjxLFsYXIgS2FtcMO8c8O8!5e0!3m2!1str!2str!4v1721998090080!5m2!1str!2str" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.628431521686!2d28.723378575857534!3d40.98961647135317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa181badd1b0f%3A0xa69c75bd9f4fd8a3!2zxLBzdGFuYnVsIMOcbml2ZXJzaXRlc2kgQXZjxLFsYXIgS2FtcMO8c8O8!5e0!3m2!1str!2str!4v1721998090080!5m2!1str!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div></div><div class="container">
 <div class="mt-4 p-5 bg-light text-dark rounded">

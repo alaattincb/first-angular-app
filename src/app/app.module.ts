@@ -20,6 +20,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { AuthInterceptor } from './auth.interceptor';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
  
 
 @NgModule({
@@ -27,6 +29,7 @@ import { AuthInterceptor } from './auth.interceptor';
     AppComponent,
     NavbarComponent,
     SidebarComponent,
+    FileUploadComponent
     
   ],
   imports: [
@@ -46,7 +49,8 @@ import { AuthInterceptor } from './auth.interceptor';
     BrowserModule,
 ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

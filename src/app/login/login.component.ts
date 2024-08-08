@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   registerForm!: FormGroup;
+  rememberMe: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -29,7 +30,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
+      password: ['', [Validators.required]],
+      rememberMe: [false]
     });
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -46,15 +48,16 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value).subscribe({
       next: (response) => {
         console.log('Login response:', response);
-        localStorage.setItem('token', response.data.token); 
+        const { rememberMe } = this.loginForm.value;
+        this.authService.setUserToken(response.data.token, response.data.user._id, rememberMe);
         this.router.navigate(['/admin-page']); 
       },
       error: (err) => {
         console.error('Login failed', err); 
       }
     });
-
   }
+
   onRegisterSubmit(): void {
     if (this.registerForm.invalid) return;
 
@@ -68,5 +71,4 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-  
 }
