@@ -16,14 +16,15 @@ export class ReqresService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<{ data: UserResponse[] }> {
-    return this.http.get<{ data: UserResponse[] }>(`${this.apiUrl}/users`);
+  getUsers(page: number): Observable<{ data: UserResponse[], total_pages: number }> {
+    return this.http.get<{ data: UserResponse[], total_pages: number }>(`${this.apiUrl}/users?page=${page}`);
   }
+
   getUnknown(): Observable<{ data: Unknown[] }> {
     return this.http.get<{ data: Unknown[] }>(`${this.apiUrl}/unknown`);
   }
+
   getSingleUser(): Observable<singleUserResponse> {
     return this.http.get<singleUserResponse>(`${this.userUrl}`);
   }
-
 }

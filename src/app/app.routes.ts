@@ -12,6 +12,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AuthGuard } from './auth.guard';
 import { ReqresComponent } from './reqres/reqres.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { ChatComponent } from './chat/chat.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -23,10 +24,12 @@ export const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent},
+  { path: 'chat', component: ChatComponent},
   { path: 'admin-page', component: AdminPageComponent, canActivate: [AuthGuard] },
   { path: 'reqres', component: ReqresComponent},
-  { path: 'file-upload', component: FileUploadComponent}
-
+  { path: 'file-upload', component: FileUploadComponent},
+  { path: 'twitter', loadChildren: () => import('./twitter/twitter.module').then(m => m.TwitterModule)},
+  { path: '**', redirectTo: 'twitter'}
 ];
 
 @NgModule({
