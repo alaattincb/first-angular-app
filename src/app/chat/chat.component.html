@@ -1,11 +1,23 @@
-<!-- src/app/components/chat/chat.component.html -->
-<div class="chat-container">
-    <div class="messages">
-      <div *ngFor="let msg of messages">{{ msg }}</div>
-    </div>
-    <div class="input-container">
-      <input [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Type a message...">
-      <button (click)="sendMessage()">Send</button>
+<div *ngIf="!isUsernameSet" class="username-container">
+  <input [(ngModel)]="username" placeholder="Enter your username" />
+  <button (click)="setUsername()" class="btn btn-success">Set Username</button>
+</div>
+
+<div *ngIf="isUsernameSet" class="chat-container">
+  <div class="messages">
+    <div *ngFor="let msg of messages"
+         class="message"
+         [ngClass]="{'from-me': msg.username === username, 'from-others': msg.username !== username}">
+      <strong>{{ msg.username }}:</strong> {{ msg.text }}
     </div>
   </div>
-  
+  <div class="input-container">
+    <input [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Type a message..." />
+    <button (click)="sendMessage()" class="btn btn-success">Send</button>
+    <!-- Emoji Picker Butonu -->
+    <button (click)="toggleEmojiPicker()" class="btn btn-secondary">😀</button>
+  </div>
+
+  <!-- Emoji Picker Elementi -->
+  <emoji-mart *ngIf="showEmojiPicker" (emojiClick)="addEmoji($event)"></emoji-mart>
+</div>
