@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      this.showLayout = !this.router.url.includes('/login') && !this.router.url.includes('/admin-page');
+      this.showLayout = !this.router.url.includes('/login') && !this.router.url.includes('/admin-page') && !this.router.url.includes('/chat-login') && !this.router.url.includes('/chat');
     });
   }
 

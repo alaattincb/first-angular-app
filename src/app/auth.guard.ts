@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -9,11 +9,14 @@ export class AuthGuard implements CanActivate {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  canActivate(): boolean {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    // Kullanıcının giriş yapıp yapmadığını kontrol et
     if (this.authService.isLoggedIn()) {
       return true;
     } else {
-      this.router.navigate(['/login']);
+      // Yönlendirme URL'sini kontrol et ve uygun yönlendirmeyi yap
+      const redirectUrl = state.url === '/chat' ? '/chat-login' : '/login';
+      this.router.navigate([redirectUrl]);
       return false;
     }
   }

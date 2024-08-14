@@ -13,6 +13,7 @@ import { AuthGuard } from './auth.guard';
 import { ReqresComponent } from './reqres/reqres.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ChatComponent } from './chat/chat.component';
+import { ChatLoginComponent } from './chat-login/chat-login.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,7 +25,8 @@ export const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent},
-  { path: 'chat', component: ChatComponent},
+  { path: 'chat-login', component: ChatLoginComponent},
+  { path: 'chat', component: ChatComponent, canActivate: [AuthGuard] },
   { path: 'admin-page', component: AdminPageComponent, canActivate: [AuthGuard] },
   { path: 'reqres', component: ReqresComponent},
   { path: 'file-upload', component: FileUploadComponent},

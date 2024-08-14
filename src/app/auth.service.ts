@@ -45,6 +45,14 @@ export class AuthService {
     return this.http.get<any>(`${this.usersApiUrl}/${userId}`, { headers });
   }
 
+  setUserInfo(first_name: string): void {
+    localStorage.setItem('first_name', first_name);
+  }
+
+  getName(): string | null {
+    return localStorage.getItem('first_name');
+  }
+
   addUser(userData: any): Observable<any> {
     const token = this.getToken();
     const headers = new HttpHeaders({
@@ -57,6 +65,7 @@ export class AuthService {
     if (rememberMe) {
       localStorage.setItem('token', token);
       localStorage.setItem('userId', userId);
+      
     } else {
       sessionStorage.setItem('token', token);
       sessionStorage.setItem('userId', userId);

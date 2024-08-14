@@ -1,11 +1,62 @@
-<!-- src/app/components/chat/chat.component.html -->
-<div class="chat-container">
-    <div class="messages">
-      <div *ngFor="let msg of messages">{{ msg }}</div>
+
+<div class="container">
+  <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+    <div class="container-fluid">
+      <strong>Welcome, {{ username }}!</strong>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button (click)="logout()" class="btn btn-danger">Logout</button>
+        </li>
+      </ul>
     </div>
-    <div class="input-container">
-      <input [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Type a message...">
-      <button (click)="sendMessage()">Send</button>
+  </nav>
+
+ 
+    <!-- Aktif kullanıcıların görüntülendiği buton grubu -->
+    <div class="container text-center">
+      <div class="btn-group position-relative">
+      <button *ngFor="let user of onlineUsers" 
+              type="button" 
+              class="btn btn-primary" 
+              (click)="selectUser(user)">
+      
+        <span class="badge badge-warning" *ngIf="unreadMessages[user]">{{ unreadMessages[user] }}</span>
+        <div class="svg-wrapper-1">
+          <div class="svg-wrapper">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path
+                fill="currentColor"
+                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <span>{{ user }}</span>
+      </button>
+    </div>
+
+    <div class="chatbox" *ngIf="selectedUser">
+      <div class="chatbox-header">
+        <span class="chatbox-title">Chat with {{ selectedUser }}</span>
+        <a class="chatbox-close" (click)="closeChatBox()">×</a>
+      </div>
+      <div class="chatbox-body">
+        <div *ngFor="let msg of getMessagesForSelectedUser()"
+             class="message"
+             [ngClass]="{'from-me': msg.username === username, 'from-others': msg.username !== username}">
+          <strong>{{ msg.username }}:</strong> {{ msg.text }}
+        </div>
+      </div>
+      <div class="chatbox-footer">
+        <input [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Type a message..." />
+        <button (click)="sendMessage()">Send</button>
+      </div>
     </div>
   </div>
-  
+
